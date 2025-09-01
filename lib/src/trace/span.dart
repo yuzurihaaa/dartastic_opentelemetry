@@ -193,7 +193,7 @@ class Span implements APISpan {
 
   @override
   InstrumentationScope get instrumentationScope => _delegate.instrumentationScope;
-  
+
   @override
   SpanContext? get parentSpanContext => _delegate.parentSpanContext;
 
@@ -254,12 +254,46 @@ class Span implements APISpan {
   // This check is always true because the method is part of the interface implementation
   // and the delegate is already an APISpan.
   /// Checks if this object is an instance of the specified type.
-  /// 
+  ///
   /// This method is used for type checking and compatibility with the API Span implementation.
   /// It returns true if the specified type is APISpan or the exact runtime type of this object.
-  /// 
+  ///
   /// @param type The type to check against
   /// @return true if this object is an instance of the specified type, false otherwise
   bool isInstanceOf(Type type) => type == APISpan || runtimeType == type;
+
+  @override
+  void addAttributeBool(String key, bool value) => _delegate.addAttributeBool(key, value);
+
+  @override
+  void addAttributeBoolList(String key, List<bool> value) => _delegate.addAttributeBoolList(key, value);
+
+  @override
+  void addAttributeDouble(String key, double value) => _delegate.addAttributeDouble(key, value);
+
+  @override
+  void addAttributeDoubleList(String key, List<double> value) {
+    // TODO: implement addAttributeDoubleList
+  }
+
+  @override
+  void addAttributeInt(String key, int value) {
+    // TODO: implement addAttributeInt
+  }
+
+  @override
+  void addAttributeIntList(String key, List<int> value) {
+    // TODO: implement addAttributeIntList
+  }
+
+  @override
+  void addAttributeString(String key, String value) {
+    // TODO: implement addAttributeString
+  }
+
+  @override
+  void addAttributeStringList(String key, List<String> value) {
+    // TODO: implement addAttributeStringList
+  }
 
 }
