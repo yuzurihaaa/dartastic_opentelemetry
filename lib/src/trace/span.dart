@@ -272,28 +272,17 @@ class Span implements APISpan {
   void addAttributeDouble(String key, double value) => _delegate.addAttributeDouble(key, value);
 
   @override
-  void addAttributeDoubleList(String key, List<double> value) {
-    // TODO: implement addAttributeDoubleList
-  }
+  void addAttributeDoubleList(String key, List<double> value) => _delegate.addAttributeDoubleList(key, value);
 
   @override
-  void addAttributeInt(String key, int value) {
-    // TODO: implement addAttributeInt
-  }
+  void addAttributeInt(String key, int value) => _delegate.addAttributeInt(key, value);
 
   @override
-  void addAttributeIntList(String key, List<int> value) {
-    // TODO: implement addAttributeIntList
-  }
+  void addAttributeIntList(String key, List<int> value) => _delegate.addAttributeIntList(key, value);
 
   @override
-  void addAttributeString(String key, String value) {
-    // TODO: implement addAttributeString
-  }
+  void addAttributeString(String key, String value) => _delegate.addAttributeString(key, value);
 
   @override
-  void addAttributeStringList(String key, List<String> value) {
-    // TODO: implement addAttributeStringList
-  }
-
+  void addAttributeStringList(String key, List<String> value) => _delegate.addAttributeStringList(key, value);
 }
