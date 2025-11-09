@@ -1,6 +1,7 @@
 import 'package:dartastic_opentelemetry_api/dartastic_opentelemetry_api.dart';
 
 import '../resource/resource.dart';
+import 'log_record.dart';
 import 'logger_provider.dart';
 
 part 'logger_create.dart';
@@ -55,14 +56,33 @@ class Logger implements APILogger {
 
   @override
   void emit({
-    Attributes? attributes,
-    Context? context,
-    body,
-    DateTime? observedTimestamp,
-    Severity? severityNumber,
-    String? severityText,
     DateTime? timeStamp,
+    DateTime? observedTimestamp,
+    Context? context,
+    SeverityNumber? severityNumber,
+    String? severityText,
+    dynamic body,
+    Attributes? attributes,
+    String? eventName,
   }) {
-    // TODO: implement emit
+    final log = LogRecord(
+      timestamp: timeStamp,
+      observedTimestamp: observedTimestamp,
+      severityText: severityText,
+      severityNumber: severityNumber,
+      body: body,
+      attributes: attributes,
+      traceId: context?.spanContext?.traceId,
+      spanId: context?.spanContext?.spanId,
+      traceFlags: context?.spanContext?.traceFlags,
+      instrumentationScope: InstrumentationScopeCreate.create(
+        name: name,
+        attributes: attributes,
+        schemaUrl: schemaUrl,
+        version: version ?? '',
+      ),
+      resource: resource,
+      eventName: eventName,
+    );
   }
 }

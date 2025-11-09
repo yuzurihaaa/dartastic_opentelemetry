@@ -11,7 +11,7 @@ dependencies:
   dartastic_opentelemetry_api:
     git:
       url: git@github.com:yuzurihaaa/dartastic_opentelemetry_api.git
-      ref: d4a122033ad5de81a1e46bd50fbe31c73b4dabe9
+      ref: cfdeadefc36e3e6643b547abc16a653e7f34b4f7
   fixnum: ^1.1.1
   grpc: ^4.1.0
   http: ^1.5.0
